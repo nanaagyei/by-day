@@ -2,12 +2,12 @@
 
 import { useUser } from "@clerk/nextjs"
 import { useSearchParams, useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Briefcase, User, Loader2 } from "lucide-react"
 
-export default function SetupProfilePage() {
+function SetupProfileComponent() {
   const { user, isLoaded } = useUser()
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -131,5 +131,18 @@ export default function SetupProfilePage() {
         </Button>
       </div>
     </div>
+  )
+}
+
+export default function SetupProfilePage() {
+  return (
+    <Suspense fallback={
+      <div className="container flex flex-col items-center justify-center min-h-[80vh]">
+        <Loader2 className="h-8 w-8 animate-spin" />
+        <p className="mt-4">Loading profile setup...</p>
+      </div>
+    }>
+      <SetupProfileComponent />
+    </Suspense>
   )
 } 

@@ -2,11 +2,11 @@
 
 import { SignUp } from "@clerk/nextjs"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, Suspense } from "react"
 import { Briefcase, User, Loader2 } from "lucide-react"
 import { useSearchParams, useRouter } from "next/navigation"
 
-export default function SignUpPage() {
+function SignUpComponent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   
@@ -112,5 +112,21 @@ export default function SignUpPage() {
         />
       </div>
     </div>
+  )
+}
+
+export default function SignUpPage() {
+  return (
+    <Suspense fallback={
+      <div className="container flex flex-col items-center justify-center min-h-[80vh]">
+        <div className="flex flex-col items-center space-y-4">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <h2 className="text-xl font-semibold">Join ByDay</h2>
+          <p className="text-muted-foreground">Loading sign-up page...</p>
+        </div>
+      </div>
+    }>
+      <SignUpComponent />
+    </Suspense>
   )
 }
