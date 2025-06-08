@@ -357,7 +357,7 @@ export default function NearbyServicesMap() {
 
   // Set initial location to Accra
   useEffect(() => {
-    console.log("Setting default location to Accra, Ghana")
+    // console.log("Setting default location to Accra, Ghana")
     filterNearbyServices(defaultCenter)
     
     // Initialize geocoder
@@ -408,7 +408,7 @@ export default function NearbyServicesMap() {
         }
         filterNearbyServices(location)
       } else {
-        console.error("Geocode was not successful for the following reason:", status)
+        // console.error("Geocode was not successful for the following reason:", status)
         alert("Location not found. Please try a different search.")
       }
     })
@@ -433,10 +433,10 @@ export default function NearbyServicesMap() {
   const servicesToDisplay = filteredServices
 
   return (
-    <div className="grid h-[600px] grid-cols-1 gap-4 lg:grid-cols-3">
+    <div className="grid min-h-[400px] h-[600px] grid-cols-1 gap-4 lg:grid-cols-3">
       {/* Map Container */}
-      <div className="col-span-2 overflow-hidden rounded-lg border bg-background relative">
-        <div className="absolute right-4 top-4 z-10 w-80">
+      <div className="col-span-1 lg:col-span-2 h-[300px] lg:h-full overflow-hidden rounded-lg border bg-background relative">
+        <div className="absolute right-2 top-2 z-10 w-full max-w-80 px-2 sm:right-4 sm:top-4 sm:w-80 sm:px-0">
           <form onSubmit={handleSearch} className="flex items-center gap-2">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

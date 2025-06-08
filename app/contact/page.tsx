@@ -117,7 +117,7 @@ export default function ContactPage() {
                         Urgent issues and immediate assistance
                       </p>
                       <a href="tel:+1-800-BYDAY-1" className="text-primary hover:underline">
-                        +1 (800) BYDAY-1
+                        +233 (0) 54 647 8756
                       </a>
                     </div>
                   </div>
@@ -178,9 +178,9 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <p className="font-medium">ByDay Headquarters</p>
                     <p className="text-muted-foreground">
-                      123 Service Street<br />
-                      Tech District, CA 94105<br />
-                      United States
+                      D6 Boundary Road<br />
+                      East Legon, Accra<br />
+                      Ghana
                     </p>
                     <div className="mt-4">
                       <Button variant="outline" className="w-full">

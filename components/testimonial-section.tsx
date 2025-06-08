@@ -5,27 +5,27 @@ import { Star } from "lucide-react"
 export default function TestimonialSection() {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Foster Agbenyo",
       role: "Homeowner",
       content:
         "ByDay made it so easy to find a reliable plumber when my kitchen sink was leaking. The professional arrived within an hour and fixed the issue quickly. Highly recommend!",
-      avatar: "SJ",
+      avatar: "FA",
       rating: 5,
     },
     {
-      name: "Michael Chen",
+      name: "Kwame Adu",
       role: "Business Owner",
       content:
         "As a small business owner, I needed urgent electrical work done on a weekend. ByDay connected me with a certified electrician who came the same day. Excellent service!",
-      avatar: "MC",
+      avatar: "KA",
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
+      name: "Emmanuel Agyemang",
       role: "Apartment Renter",
       content:
         "I've used ByDay multiple times for cleaning services and handyman work. The professionals are always on time, courteous, and do a great job. The app is so convenient!",
-      avatar: "ER",
+      avatar: "EA",
       rating: 4,
     },
   ]
